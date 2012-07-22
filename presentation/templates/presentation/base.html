@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How to Django</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Marc Hughes">
+	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Montserrat' rel='stylesheet' type='text/css'>
+	<link href="{{STATIC_URL}}presentation/js/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{{STATIC_URL}}presentation/js/prettify.js"></script>
+	
+	<style type="text/css" media="screen">
+		html { height: 100% }
+		body {
+			font-family: 'Rokkitt', serif;
+			height: 100%;
+			background-color: #f0f0f0;
+			color: #222;
+			/* font-family: 'Montserrat', sans-serif; */
+		}
+		h1 {
+			font-size: 72px;
+			margin-top: 0px;
+			color: #333;
+		}
+		h2 {
+			font-size: 64px;
+			margin-top: 20px;
+			margin-bottom: 15px;
+			
+			color: #444;
+		}
+		h3 {
+			font-size: 56px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			color: #555;
+		}
+		
+		ul {
+			margin-top: 0px;
+		}
+		
+		.slide {
+			background-color: #ffffff;
+			min-height: 80%;
+			padding: 30px;
+/*			margin-left: 40px;
+			margin-right: 40px;
+			margin-top: 20px;
+			margin-bottom: 40px;*/
+			width: 1024px;
+			height: 700px;
+			box-shadow: 0px 0px 20px #aaa;
+		}
+		.slidecontrols {
+			position: fixed;
+			right: 5px;
+			bottom: 5px;
+			font-size: 24px;
+			
+		}
+		
+		.slidecontrols a {
+			text-decoration: none;
+		}
+		
+		.content-body {
+			margin-left: 50px;
+			margin-right: 50px;
+			font-size: 36px;
+		}
+		
+		pre {font-family: 'Montserrat', sans-serif;}
+		
+		li small {
+			font-style: italic;
+			color: #999;
+			font-size: 0.75em;
+		}
+		
+	</style>
+  </head>
+
+  <body onload="prettyPrint()">
+	<div class="slide">
+		<div class="content">
+		{% block body %}
+		{% endblock %}
+		</div>
+	</div>
+	<div class="slidecontrols">
+		{% if slidenum > 1 %}
+		<a href="{{slidenum|add:"-1"}}">Prev Slide</a> - 
+		{% endif %}
+		<a href="{{slidenum|add:"1"}}">Next Slide</a>
+	</div>
+  </body>
+</html>

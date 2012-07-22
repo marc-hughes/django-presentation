@@ -1,0 +1,11 @@
+.svn
+local_settings.py
+site_media
+*~
+*#*
+runserver.log
+env
+build
+*.pyc
+bin-debug
+static-build
