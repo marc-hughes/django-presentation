@@ -90,6 +90,7 @@
 	</div>
 	<div class="slidecontrols">
 		{% if slidenum > 1 %}
+		<a href="https://github.com/marc-hughes/django-presentation/compare/slide{{slidenum|add:"-1"}}...slide{{slidenum}}">Diff</a> - 
 		<a href="{{slidenum|add:"-1"}}">Prev Slide</a> - 
 		{% endif %}
 		<a href="{{slidenum|add:"1"}}">Next Slide</a>
