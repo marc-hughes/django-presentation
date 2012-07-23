@@ -1,0 +1,16 @@
+{% extends "presentation/base.html" %}
+
+{% block body %}
+<h1>virtualenv &amp; pip</h1>
+
+<div class="content-body">
+
+<pre class="prettyprint">
+	virtualenv env
+	source env/bin/activate
+	pip install -r requirements.txt
+</pre>
+
+</div>
+
+{% endblock %}

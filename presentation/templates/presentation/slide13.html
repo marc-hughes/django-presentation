@@ -1,0 +1,14 @@
+{% extends "presentation/base.html" %}
+
+{% block body %}
+<h1>Managing Static Files</h1>
+
+<div class="content-body" >
+	<h3>Don't serve static files from your app server!</h3>	
+	<pre class="prettyprint">python manage.py collectstatic</pre>
+	Amazon S3 + Cloudfront provides a CDN that is within everybody's price range, or use Apache, Nginx, or your favorite static file webserver.<br/><br/>
+
+	local_Settings.py:
+	<pre class="prettyprint">STATIC_URL = 'https://my-cdn.s3.amazonaws.com/'</pre>
+</div>
+{% endblock %}

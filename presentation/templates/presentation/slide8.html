@@ -1,0 +1,25 @@
+{% extends "presentation/base.html" %}
+
+{% block body %}
+<h1>models &amp; migrations</h1>
+
+<div class="content-body" >
+	<ul>
+		<li>Define model in models.py</li>
+		<li>Create migration with South
+			<pre class="prettyprint">
+python manage.py schemamigration demoapp --auto
+			</pre>
+		</li>
+		<li>Apply the migration
+			<pre class="prettyprint">
+python manage.py migrate demoapp
+			</pre>
+		</li>
+		
+	</ul>
+	
+	
+	
+</div>
+{% endblock %}

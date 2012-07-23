@@ -1,0 +1,39 @@
+{% extends "presentation/base.html" %}
+
+{% block body %}
+<h1 style="margin-bottom:0px;">Projects vs. Apps</h1>
+
+<div class="content-body" style="margin-top:0px">
+<pre style="font-family:Monaco, sans-serif; font-size:20px"><span style="color: #005500">├── demo
+    ├── requirements.txt
+    ├── manage.py
+    ├── settings.py
+    ├── urls.py
+    ├── wsgi.py
+    ├── apps</span>
+<span style="color: #550000">        ├── demoapp
+            ├── models.py
+            └── views.py</span>
+<span style="color: #000055">        ├── presentation
+            ├── models.py
+            ├── static
+            │   └── presentation
+            │       └── js
+            │           ├── prettify.css
+            │           └── prettify.js
+            ├── templates
+            │   └── presentation
+            │       ├── base.html
+            │       ├── slide1.html
+            │       ├── slide2.html
+            │       ├── slide3.html
+            │       ├── slide4.html
+            │       └── slide5.html
+            ├── urls.py
+            └── views.py</span>
+
+</pre>
+
+</div>
+
+{% endblock %}
