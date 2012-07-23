@@ -4,6 +4,11 @@
 <h1>Deploying to Heroku</h1>
 
 <div class="content-body" >
-  
+  <pre class="prettyprint">heroku apps:create django-presentation
+git push -u heroku master
+heroku run python manage.py syncdb 
+heroku run python manage.py migrate
+</pre>
+  <a href="http://django-presentation.herokuapp.com/">http://django-presentation.herokuapp.com/</a>
 </div>
 {% endblock %}
