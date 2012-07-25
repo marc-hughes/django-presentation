@@ -1,0 +1,15 @@
+{% extends "demoapp/base.html" %}
+
+{% block body %}
+
+<ul>
+	{% for person in people %}
+		<li>
+			<img width="200" src="{{person.picture_url}}"><br/>
+			{{person.twitter_username}} - {{person.name}} - {{person.follow_count}}<br/>
+			<a href="#">Follow</a>
+			
+		</li>
+	{% endfor %}
+</ul>
+{% endblock %}
