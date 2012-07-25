@@ -1,4 +1,5 @@
 import os.path
+import os.environ
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -170,8 +171,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-TWITTER_CONSUMER_KEY         = ''  # Get your own OAuth key from twitter!
-TWITTER_CONSUMER_SECRET      = ''  # put them in local_settings
+TWITTER_CONSUMER_KEY         = os.environ.get("TWITTER_CONSUMER_KEY","")   # Get your own OAuth key from twitter!
+TWITTER_CONSUMER_SECRET      = os.environ.get("TWITTER_CONSUMER_SECRET","")  # put them in local_settings
 
 LOGIN_REDIRECT_URL = '/people'
 
@@ -210,4 +211,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.user.update_user_details'
 )
 
-from local_settings import *
+try:
+    from local_settings import *
+except:
+    pass # no local settings.
