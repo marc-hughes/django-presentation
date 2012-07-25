@@ -2,13 +2,14 @@
 
 {% block body %}
 
-<ul>
+<ul class="thumbnails">
 	{% for person in people %}
-		<li>
-			<img width="200" src="{{person.picture_url}}"><br/>
-			{{person.twitter_username}} - {{person.name}} - {{person.follow_count}}<br/>
-			<a href="#">Follow</a>
-			
+		<li class="span3 well" >
+			<h1>{{person.name}} <small>{{person.twitter_username}}</small></h1>
+			<div style="height: 250px">
+				<img class="thumbnail" width="200" src="{{person.picture_url}}" >
+			</div>			
+			<a href="{% url follow person.id %}" class="btn btn-primary">Follow</a>
 		</li>
 	{% endfor %}
 </ul>

@@ -7,5 +7,5 @@ admin.autodiscover()
 urlpatterns = patterns('demoapp.views',
     url(r'^$', 'homepage', name='home'),
     url(r'^people$', 'people', name='people'),
-    url(r'^person/(?P<person_id>[0-9]+)$', 'person', name='person'),
+    url(r'^follow/(?P<person_id>[0-9]+)$', 'follow', name='follow'),
 )
