@@ -15,5 +15,7 @@ urlpatterns = patterns('',
 
     url(r'^presentation/', include('presentation.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'', include('social_auth.urls')),
     url(r'^', include('demoapp.urls')),
+    
 )
