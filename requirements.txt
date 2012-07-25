@@ -2,3 +2,4 @@ django==1.4
 south
 mysql-python
 django-social-auth
+dj-database-url==0.2.1
