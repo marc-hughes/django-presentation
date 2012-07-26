@@ -2,6 +2,9 @@ from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
+from django.conf import settings
+
+import twitter
 
 
 from models import InterestingPerson
@@ -19,5 +22,16 @@ def people(request):
     
 def follow(request, person_id):
     person = get_object_or_404(InterestingPerson, id=person_id)
+
+    tokens = request.user.social_auth.get(provider="twitter").tokens
+    access_token_secret = tokens['oauth_token_secret']
+    access_token_key = tokens['oauth_token']
+
+    api = twitter.Api(consumer_key=settings.TWITTER_CONSUMER_KEY, 
+                      consumer_secret=settings.TWITTER_CONSUMER_SECRET, 
+                      access_token_key=access_token_key, 
+                      access_token_secret=access_token_secret)
+    api.CreateFriendship(person.twitter_username)
+    
     return HttpResponseRedirect(reverse("people"))
     
