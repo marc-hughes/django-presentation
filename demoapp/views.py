@@ -17,7 +17,7 @@ def homepage(request):
     return render_to_response('demoapp/homepage.html', context_instance=RequestContext(request))
 
 def people(request):
-    people = InterestingPerson.objects.all()
+    people = InterestingPerson.objects.all().order_by("id")
     return render_to_response('demoapp/people.html', {'people':people, 'user':request.user}, context_instance=RequestContext(request))
     
 def follow(request, person_id):
