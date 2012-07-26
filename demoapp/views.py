@@ -33,5 +33,8 @@ def follow(request, person_id):
                       access_token_secret=access_token_secret)
     api.CreateFriendship(person.twitter_username)
     
+    person.follow_count += 1
+    person.save()
+    
     return HttpResponseRedirect(reverse("people"))
     

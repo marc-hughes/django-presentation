@@ -10,6 +10,7 @@
 				<img class="thumbnail" width="200" src="{{person.picture_url}}" >
 			</div>			
 			<a href="{% url follow person.id %}" class="btn btn-primary">Follow</a>
+			<span class="label label-info"><i class="icon-user icon-white"> </i> {{person.follow_count}} follows</span>
 		</li>
 	{% endfor %}
 </ul>
